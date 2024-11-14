@@ -1,0 +1,125 @@
+#root {
+  width:100%;
+  max-width: 1400px;
+  margin: 0;
+  text-align: center;
+  background:black;
+}
+
+.logo {
+  height: 6em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  /* Padding ridotto per evitare interferenze */
+  padding: 1em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.my-slider {
+  display: flex;
+  overflow: hidden;
+  width:100%;
+}
+
+.card {
+  background-color: red;
+  width: 200px; /* Imposta una larghezza fissa per le card */
+  height: 300px; /* Altezza fissa per le card */
+  margin-right: 10px; /* Spazio tra le card */
+  flex-shrink: 0; /* Impedisce che le card si riducano */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+
+.menuCategoriesClose{
+  display:none;
+}
+
+
+.rotate-center-right {
+  -webkit-animation: rotate-center-right 0.4s ease-in-out both;
+          animation: rotate-center-right 0.4s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center-right {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(180deg); /* Gira a destra */
+  }
+}
+@keyframes rotate-center-right {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg); /* Gira a destra */
+  }
+}
+
+.rotate-center-left {
+  -webkit-animation: rotate-center-left 0.4s ease-in-out both;
+          animation: rotate-center-left 0.4s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center-left {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg); /* Gira a sinistra */
+  }
+}
+@keyframes rotate-center-left {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg); /* Gira a sinistra */
+  }
+}
+
+p{
+  font-family:sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:sans-serif;
+}
