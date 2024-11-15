@@ -148,8 +148,9 @@ const ProductDetails = () => {
                     </button>
                   ) : (
                     <button className="flex flex-col justify-center items-center bg-black">
-                      <LockIcon />La mia lista
-                    </button>
+                    <LockIcon />
+                    La mia lista
+                  </button>
                   )}
                   <button className="flex flex-col justify-center items-center bg-black">
                     <ThumbUpIcon />Valuta

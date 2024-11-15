@@ -66,6 +66,7 @@ useEffect(() => {
 
   return (
     <>
+    <div className="h-screen">
       {listLoading && <p>Loading...</p>}
       {listError && <p>Error: {listError}</p>}
       {mediaAndSameGenre.length > 0 ? (
@@ -80,14 +81,19 @@ useEffect(() => {
       )}
       {sameActors.length > 0 ? (
             <div className="mt-3">
-            <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Cast Simili</h2>
+            <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Stessi attori</h2>
            <div className="p-2">
               <Carousel typeMedia={null} genre={null} favoriteMedia={null} listMedia={sameActors}></Carousel>
             </div>
             </div>
         
       ) : (
-     <p>Loading..</p>
+        <div className="mt-3">
+        <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Film piu visti</h2>
+       <div className="p-2">
+          <Carousel typeMedia={"film"} genre={null} favoriteMedia={null} listMedia={null}></Carousel>
+        </div>
+        </div>
       )}
          {sameCountry.length > 0 ? (
           <div className="mt-3">
@@ -97,7 +103,12 @@ useEffect(() => {
           </div>
           </div>
       ) : (
-     <p>Loading..</p>
+        <div className="mt-3">
+        <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Serie tv apprezzate</h2>
+       <div className="p-2">
+          <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null} listMedia={null}></Carousel>
+        </div>
+        </div>
       )}
        {sameDirector.length > 0 ? (
         <div className="mt-3">
@@ -107,8 +118,14 @@ useEffect(() => {
         </div>
         </div>
       ) : (
-     <p>Loading..</p>
+        <div className="mt-3">
+        <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Film premiati</h2>
+       <div className="p-2">
+          <Carousel typeMedia={"film"} genre={null} favoriteMedia={null} listMedia={null}></Carousel>
+        </div>
+        </div>
       )}
+      </div>
     </>
   );
 };

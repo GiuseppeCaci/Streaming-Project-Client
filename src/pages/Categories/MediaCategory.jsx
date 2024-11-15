@@ -34,7 +34,7 @@ const MediaCategory = () => {
          {listLoading && <p>Loading...</p>}
          {listError && <p>Error: {listError}</p>}
          {thisGenere.length > 0 ? (
-            <div>
+            <div className="p-0 m-0 h-screen pt-20">
                  <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">{genere}</h2>
                <div className="flex flex-wrap p-2 justify-start items-center">
                {thisGenere.map((element) => (

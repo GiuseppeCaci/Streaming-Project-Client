@@ -46,12 +46,12 @@ const MoreLikeThis = ({ typeMedia, genre, favoriteMedia }) => {
       
       {/* Mostra i media filtrati, se presenti */}
       {filteredItems.length > 0 ? (
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="flex flex-wrap justify-start items-start">
           {filteredItems.map((element) => (
             <div key={element._id} className="basis-1/3 flex flex-wrap justify-center items-center p-1">
               <Link to={`/categories/${element.genere}/${element.titolo}`} className="block">
                 {/* Mostra l'immagine del media con un link che porta alla pagina dedicata */}
-                <img src={`/${element.locandina}`} alt={`${element.titolo}`} className="w-28" />
+                <img src={`/${element.locandina}`} alt={`${element.titolo}`} className="w-32" />
               </Link>
             </div>
           ))}

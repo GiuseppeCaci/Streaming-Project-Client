@@ -59,7 +59,7 @@ const SearchResultNoMediaFound = () => {
         <div className="mt-3">
         <h2 className="text-left pl-3 text-white text-lg font-semibold font-sans">Documentari premiati</h2>
        <div className="p-2">
-          <Carousel typeMedia={null} genre={"documentari"} favoriteMedia={null} listMedia={null}></Carousel>
+          <Carousel typeMedia={null} genre={"documentario"} favoriteMedia={null} listMedia={null}></Carousel>
         </div>
         </div>
       ) : (

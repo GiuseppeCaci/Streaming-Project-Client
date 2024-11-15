@@ -24,16 +24,16 @@ const GeneralSectionHome = () => {
             <Carousel typeMedia={"film"} genre={null} favoriteMedia={null}></Carousel>
         </div>
         <div>
-        <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">sitCom divertenti</h2>
-            <Carousel typeMedia={"serieTV"} genre={"commedia"} favoriteMedia={null}></Carousel>
+        <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Serie Tv</h2>
+            <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null}></Carousel>
         </div>
         <div>
-        <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Film d'azione</h2>
-            <Carousel typeMedia={"film"} genre={"azione"} favoriteMedia={null}></Carousel>
+        <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Storie di fantascienza</h2>
+            <Carousel typeMedia={null} genre={"fantascienza"} favoriteMedia={null}></Carousel>
         </div>
         <div>
         <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Sit com</h2>
-            <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null}></Carousel>
+            <Carousel typeMedia={"serieTV"} genre={"commedia"} favoriteMedia={null}></Carousel>
         </div>
 
     </div>

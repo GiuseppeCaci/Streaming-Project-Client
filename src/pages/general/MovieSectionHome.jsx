@@ -26,16 +26,16 @@ return (
       <Carousel typeMedia={"film"} genre={null} favoriteMedia={null}></Carousel>
   </div>
   <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">film divertenti</h2>
-      <Carousel typeMedia={"film"} genre={"commedia"} favoriteMedia={null}></Carousel>
-  </div>
-  <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Film d'azione</h2>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">film d'azione</h2>
       <Carousel typeMedia={"film"} genre={"azione"} favoriteMedia={null}></Carousel>
   </div>
   <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">horror</h2>
-      <Carousel typeMedia={"film"} genre={"horror"} favoriteMedia={null}></Carousel>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Film tratti da Libri</h2>
+      <Carousel typeMedia={"film"} genre={null} favoriteMedia={null}></Carousel>
+  </div>
+  <div>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Documentari</h2>
+      <Carousel typeMedia={"film"} genre={"documentario"} favoriteMedia={null}></Carousel>
   </div>
 
 </div>

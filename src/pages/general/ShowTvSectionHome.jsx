@@ -23,20 +23,20 @@ return (
       <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={"yes"}></Carousel>
   </div>
   <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Serie premiate</h2>
-      <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null}></Carousel>
-  </div>
-  <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Serie divertenti</h2>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">SitCom divertenti</h2>
       <Carousel typeMedia={"serieTV"} genre={"commedia"} favoriteMedia={null}></Carousel>
   </div>
   <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Serie d'azione</h2>
-      <Carousel typeMedia={"serieTV"} genre={"azione"} favoriteMedia={null}></Carousel>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Premiate dalla critica</h2>
+      <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null}></Carousel>
   </div>
   <div>
-  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">horror</h2>
-      <Carousel typeMedia={"serieTV"} genre={"horror"} favoriteMedia={null}></Carousel>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Di fantascienza</h2>
+      <Carousel typeMedia={"serieTV"} genre={"fantascienza"} favoriteMedia={null}></Carousel>
+  </div>
+  <div>
+  <h2 className="pb-2 text-left mt-8 mb-1 pl-3 text-white text-lg font-semibold font-sans">Uscite di recente</h2>
+      <Carousel typeMedia={"serieTV"} genre={null} favoriteMedia={null}></Carousel>
   </div>
 
 </div>
