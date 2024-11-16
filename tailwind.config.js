@@ -22,6 +22,9 @@ export default {
         '104': '27rem',
         '106': '30rem', // 800px
       },
+      backgroundImage: {
+        'welcome-bg': "url('/assets/movies/bg-1.wepb')",
+      },
     },
   },
   plugins: [],

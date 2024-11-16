@@ -23,6 +23,7 @@ const RegisterConfirm = lazy(() => import("../pages/Auth/RegisterConfirm"));
 const UserEmailNotConfirm = lazy(() => import("../pages/Auth/UserEmailNotConfirm"));
 const DeleteProfile = lazy(() => import("../pages/Auth/DeleteProfile"));
 const MyListMedia = lazy(() => import("../pages/Profile/MyListMedia"));
+const WelcomePage = lazy(() => import("../pages/general/WelcomePage"));
 
 
 //Componenti
@@ -58,6 +59,7 @@ const AppRoute = () => {
             <Route path="/RegisterConfirm" element={<RegisterConfirm/>} />
             <Route path="/DeleteProfile" element={<DeleteProfile/>} />
             <Route path="/mylistmedia" element={<MyListMedia/>} />
+            <Route path="/welcome-page" element={<WelcomePage/>} />
           </Route>
         </Routes>
       </Suspense>

@@ -17,6 +17,8 @@ const Footer = () => {
       setPageOfMenu(true);
     } else if (location.pathname === "/SearchPage") {
       setPageOfMenu(true);
+    } else if (location.pathname === "/welcome-page") {
+      setPageOfMenu(true);
     }
   },[location.pathname])
 

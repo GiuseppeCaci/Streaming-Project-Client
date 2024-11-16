@@ -7,6 +7,7 @@ import GeneralSectionHome from "./GeneralSectionHome";
 import MovieSectionHome from "./MovieSectionHome";
 import ShowTvSectionHome from "./ShowTvSectionHome";
 import UseResetVisibility from "../../UseHooks/UseResetVisibility";
+import { useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
@@ -36,6 +37,17 @@ const Home = () => {
       console.log("home, listFavorties: nessun accesso eseguito");
     }
   }, []);
+
+  const navigate = useNavigate();
+  const hasVisited = localStorage.getItem("hasVisited");
+
+  useEffect(() => {
+    if (!hasVisited) {
+      // Reindirizza alla pagina di benvenuto
+      localStorage.setItem("hasVisited", "true"); // Salva che l'utente ha visitato
+      navigate("/welcome-page");
+    }
+  }, [navigate]);
 
   return (
     <>
