@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { Link } from "react-router-dom";
 import { connectListFavorite } from "../../Redux/Features/FavoritesMedia/FavoriteSlice";
 
@@ -58,8 +57,8 @@ const MyListMedia = () => {
           {listError && <p>Error: {listError}</p>}
           {filteredItems.length > 0 ? (
             <div className="mt-20 h-screen">
-                  <h2 className="text-left mb-1 pl-3 text-white text-lg font-semibold font-sans">La tua lista preferiti</h2>
-                  <div className="flex flex-wrap p-2 justify-start items-center">
+                  <h2 className="text-left mb-1 pl-10 text-white text-lg font-semibold font-sans">La tua lista preferiti</h2>
+                  <div className="flex flex-wrap p-2 justify-center items-center">
   {filteredItems.map((element) => (
     <Link
       key={element._id}

@@ -8,6 +8,11 @@ import {
   removeMediaInFavoriteList,
 } from "../../Redux/Features/Api/ListFavoriteUserApi";
 import { connectListFavorite } from "../../Redux/Features/FavoritesMedia/FavoriteSlice";
+import UseResetVisibility from "../../UseHooks/UseResetVisibility";
+import { fetchSinglePost } from "../../Redux/Features/Api/ProductApi";
+import GenericSpinner from "../../Components/skeleton/GenericSpinner";
+
+//icone
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import DownloadIcon from "@mui/icons-material/Download";
 import AddIcon from "@mui/icons-material/Add";
@@ -17,8 +22,6 @@ import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
 import MoreLikeThis from "../../Components/ProductsComponents/MoreLikeThis";
 import LockIcon from '@mui/icons-material/Lock';
-import UseResetVisibility from "../../UseHooks/UseResetVisibility";
-import { fetchSinglePost } from "../../Redux/Features/Api/ProductApi";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const ProductDetails = () => {
@@ -91,7 +94,11 @@ const ProductDetails = () => {
   return (
     <>
       <div>
-        {listLoading && <p>Loading...</p>}
+        {listLoading && 
+        <div className="absolute top-12 right-36 z-50">
+          <GenericSpinner></GenericSpinner>
+          </div>
+        }
         {listError && <p>Error: {listError}</p>}
         {singlePost ? (
           <>
@@ -176,7 +183,10 @@ const ProductDetails = () => {
             </div>
           </>
         ) : (
-          !listLoading && <p>No posts available.</p>
+          !listLoading && 
+          <div className="absolute top-12 right-36 z-50">
+          <GenericSpinner></GenericSpinner>
+          </div>
         )}
       </div>
       <div className="text-left mt-7">

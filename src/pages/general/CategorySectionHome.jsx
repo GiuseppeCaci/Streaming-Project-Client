@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Carousel from "../../Components/ProductsComponents/Carousel";
 import HeroMediaRandom from "../../Components/ProductsComponents/HeroMediaRandom";
-import UseResetVisibility from "../../UseHooks/UseResetVisibility";
 
 const CategorySectionHome = ({genre}) => {
 

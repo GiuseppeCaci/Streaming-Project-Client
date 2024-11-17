@@ -13,7 +13,7 @@ const WelcomePage = () => {
         <div className="text-white flex flex-col justify-center items-center">
           {/* Logo o titolo */}
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-center">
-            Benvenuto su <span className="text-red-500">Streamflix</span>
+            Benvenuto su <span className="text-red-500">Streaming Project</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center">
             Il tuo portale per i migliori film, serie TV e tanto altro. Accedi o

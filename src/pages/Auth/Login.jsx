@@ -8,6 +8,8 @@ import { actionReset } from "../../Redux/Features/Users/AuthSlice";
 import Loading from "../../Components/Loading";
 import { useNavigate } from "react-router-dom";
 import { favoritesListByUserId } from "../../Redux/Features/Api/ListFavoriteUserApi";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,8 +23,7 @@ useEffect(() => {
 },[])
 
   const dispatch = useDispatch();
-  const myToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjlmZTQxZDNlODA2MTFjYzA3MmIwYSIsInVzZXJuYW1lIjoiYWRtaXIiLCJpYXQiOjE3MzA4MDU0Mjh9.0WXKmj7R5toOdNExEL8YscSsaLgmeHWjCZkYYdvb444";
+  const myToken =`${import.meta.env.VITE_MY_TOKEN}`;
   const {
     users,
     loading: loadingGetAll,
@@ -100,7 +101,6 @@ useEffect(() => {
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-      console.log(`dal login: accesso eseguito da ${user.username}`);
       dispatch(favoritesListByUserId(user.id));
     }
   }, [user, dispatch]);
@@ -108,9 +108,7 @@ useEffect(() => {
   useEffect(() => {
     if (accountConnect) {
       localStorage.setItem("favoritesList", JSON.stringify(accountConnect));
-      console.log("Lista dei preferiti caricata e salvata nel localStorage:", accountConnect);
       setTimeout(() => {
-        console.log("Timeout di 5 secondi completato!");
        navigate("/")
       }, 3000);
     }
@@ -129,20 +127,31 @@ useEffect(() => {
     }
   }
 
+   // Stato per tenere traccia della visibilità della password
+   const [showPassword, setShowPassword] = useState(false);
+
+   // Funzione per alternare la visibilità della password
+   const togglePasswordVisibility = () => {
+     setShowPassword(!showPassword);
+   };
+ 
+
   return (
     <>
-      <div className="h-screen pt-36">
+      <div className="h-screen flex justify-center flex-col"   style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url('assets/movies/bg-welcome.jpeg')`,
+        }}>
         {user ? (
           <>
           <div className="flex flex-col justify-center items-center">
-          <img className="w-32 mb-3 rounded-sm" src={`${user.imgprofile}`}></img>
-          <h2 className="pl-3 text-white text-xl font-semibold font-sans">Bentornato {user.username}!</h2>
+          <img className="w-44 mb-3 rounded-xl" src={`${user.imgprofile}`}></img>
+          <h2 className="pl-3 text-white text-2xl font-semibold font-sans">Bentornato {user.username}!</h2>
           </div>
           </>
         ) : (
           <>
-            <h2 className="pl-3 text-white text-lg font-semibold font-sans">
-              Accedi 
+            <h2 className="pl-3 text-white text-2xl font-semibold font-sans">
+              ACCEDI
             </h2>
             <form
               className="flex flex-col p-5 space-y-4"
@@ -159,21 +168,26 @@ useEffect(() => {
                   onChange={handleInputChange}
                   className="w-full p-3 bg-netflixLightGray border-none outline-none 
                   focus:outline-none active:outline-none hover:outline-none 
-                  placeholder-gray-400 caret-white caret-w-2 text-sm font-light text-white rounded-md"
+                  placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
                 />
               </label>
               <label className="flex flex-col">
+              <div className="flex justify-between items-center w-full bg-netflixLightGray rounded-md">
                 <input
                   required
-                  type="text"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
                   value={loginForm.password}
                   onChange={handleInputChange}
                   className="w-full p-3 bg-netflixLightGray border-none outline-none 
                   focus:outline-none active:outline-none hover:outline-none 
-                  placeholder-gray-400 caret-white caret-w-2 text-sm font-light text-white rounded-md"
+                  placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
                 />
+                  <span onClick={togglePasswordVisibility} className="pr-4">
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}{" "}
+                  </span>
+                </div>
               </label>
               <button
                 type="submit"

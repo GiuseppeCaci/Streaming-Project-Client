@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import UseFetchAllPost from "../UseHooks/UseFetchAllPost";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTypeMedia } from "../Redux/Features/Products/ListSlice";
+import { useLocation } from "react-router-dom";
+
+//icone
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useLocation } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import UseResetVisibility from "../UseHooks/UseResetVisibility";
-import UseFetchBasicAllPost from "../UseHooks/UseFetchBasicAllPost";
 
 const Navbar = () => {
   const { postBasicList, listLoading, listError } = useSelector((state) => state.listProducts);
@@ -16,12 +16,7 @@ const Navbar = () => {
   const typeMedia = useSelector((state) => state.listProducts.typeMedia);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("dalla navbar",postBasicList)
-  },[postBasicList])
-
   UseResetVisibility();
-
 
   useEffect(() => {
     const filteredPostList =
@@ -132,7 +127,7 @@ const Navbar = () => {
                   For {userLoginCheck.username}
                 </h2>
               ) : (
-                <h2 className="text-lg text-white"> visitatore</h2>
+                <h2 className="text-lg text-white font-semibold"> Visitatore</h2>
               )}
               <div></div>
               <div className="flex space-x-6">

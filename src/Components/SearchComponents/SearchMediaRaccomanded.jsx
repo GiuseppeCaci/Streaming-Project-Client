@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
-import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const SearchMediaRaccomanded = () => {
   const { postBasicList, listLoading, listError } = useSelector((state) => state.listProducts);
-  const { accountConnect } = useSelector((state) => state.listFavoriteUser);
-
-
 
   return (
     <>

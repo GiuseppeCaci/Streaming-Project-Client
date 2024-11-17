@@ -23,18 +23,12 @@ const Home = () => {
   useEffect(() => {
     if (userLoginCheck) {
       dispatch(loginSuccess(userLoginCheck));
-      console.log("Home, accesso eseguito da:", userLoginCheck);
-    } else {
-      console.log("home: nessun accesso eseguito");
-    }
+    } 
   }, []);
 
   useEffect(() => {
     if (userListFavorites) {
       dispatch(connectListFavorite(userListFavorites));
-      console.log("Home,lista preferiti caricata:", userListFavorites);
-    } else {
-      console.log("home, listFavorties: nessun accesso eseguito");
     }
   }, []);
 

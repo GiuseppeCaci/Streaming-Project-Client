@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
 const SearchResultMoreOne = ({ searchResultMedia }) => {
   const { postBasicList, listLoading, listError } = useSelector((state) => state.listProducts);
-  const { accountConnect } = useSelector((state) => state.listFavoriteUser);
   const [remainingResults, setCombinedResults] = useState([]);
 
 
@@ -34,7 +31,7 @@ const SearchResultMoreOne = ({ searchResultMedia }) => {
          <Link key={element._id} to={`/categories/${element.genere}/${element.titolo}`} className="
          basis-1/3 outline-none focus:outline-none 
          active:outline-none hover:text-white flex justify-center flex-col items-center">
-          <img src={`${element.locandina}`} alt={`${element.titolo}`} className="h-36 w-28 rounded-lg m-1" loading="lazy"/>
+          <img src={`${element.locandina}`} alt={`${element.titolo}`} className="rounded-lg p-1" loading="lazy"/>
         </Link>
           ))}
         </div>

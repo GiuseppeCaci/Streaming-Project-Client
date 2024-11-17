@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="353.000000pt" height="321.000000pt" viewBox="0 0 353.000000 321.000000">
+  <g transform="translate(0.000000,321.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+    <path d="M306 3199 c-62 -15 -153 -68 -197 -116..."/>
+  </g>
+  <!-- Testo con colore personalizzato -->
+  <text x="50" y="150" font-size="40" fill="red">Logo Text</text>
+</svg>

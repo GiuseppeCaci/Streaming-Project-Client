@@ -2,9 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import UseFetchGetAllUser from "../../UseHooks/UseFetchGetAllUser";
-import { fetchUserGetAll } from "../../Redux/Features/Api/UserApi";
-import { fetchUserRequestChangePasswordEmail } from "../../Redux/Features/Api/UserApi";
 import { useParams } from "react-router-dom";
 import { fetchUserConfirmChangePassword } from "../../Redux/Features/Api/UserApi";
 

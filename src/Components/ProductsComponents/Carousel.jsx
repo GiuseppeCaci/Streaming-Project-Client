@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+//carosello
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+//skeleton carosello
 import CarouselSkeleton from "../skeleton/CarouselSkeleton";
 
 const Carousel = ({ typeMedia, genre, favoriteMedia, listMedia }) => {

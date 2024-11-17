@@ -4,12 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { OperationSearchResult } from "../../Redux/Features/Products/OperationSlice";
 import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { useNavigate } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import SearchMediaRaccomanded from "../../Components/SearchComponents/SearchMediaRaccomanded";
 import SearchResultMoreOne from "../../Components/SearchComponents/SearchResultMoreOne";
 import SearchResultOneFound from "../../Components/SearchComponents/SearchResultOneFound";
 import SearchResultNoMediaFound from "../../Components/SearchComponents/SearchResultNoMediaFound";
+
+//icone
+import SearchIcon from "@mui/icons-material/Search";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const SearchPage = () => {
   const dispatch = useDispatch();
@@ -83,7 +85,7 @@ const SearchPage = () => {
               placeholder="film, serie Tv, documentari.."
               className="w-3/4 bg-netflixLightGray border-none outline-none 
                  focus:outline-none active:outline-none hover:outline-none 
-                 placeholder-gray-400 caret-white caret-w-2 text-sm font-light text-white"
+                 placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white"
             />
           </div>
         </div>

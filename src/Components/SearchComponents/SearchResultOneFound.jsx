@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { useSelector } from "react-redux";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import Carousel from "../ProductsComponents/Carousel";
 
 const SearchResultOneFound = ({ searchResultMedia }) => {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
 import { useLocation } from "react-router-dom";
+//icone
+import HomeIcon from '@mui/icons-material/Home';
 
 const Footer = () => {
   //controllo se l'user ha fatto l'accesso
