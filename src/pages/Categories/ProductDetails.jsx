@@ -108,18 +108,14 @@ const ProductDetails = () => {
                   <CloseIcon className="text-white" />
                 </Link>
               </button>
-              <button className="absolute top-20 right-40 m-5 w-10 h-10 rounded-full bg-gray-400 bg-opacity-0 flex items-center
-               justify-center hover:border-none focus:border-none active:border-none border-none focus:outline-none ">
-                  <PlayCircleOutlineIcon fontSize="large" className="text-white" />
-              </button>
               {listLoading ? 
   <div className="w-full h-56 sm:h-60 md:h-80 lg:h-96 bg-netflixSkeleton animate-pulse"></div>
   :
-  <img
-    src={`/${singlePost.background}`}
-    className="w-full h-56 sm:h-60 md:h-80 lg:h-96 object-cover object-center"
-    alt={`${singlePost.titolo} background`} loading="lazy"
-  />
+<img
+  src={`/${singlePost.background}`}
+  className="w-full h-56 sm:h-60 md:h-80 lg:h-96 xl:h-112 object-cover object-center"
+  alt={`${singlePost.titolo} background`} loading="lazy"
+/>
 }
 
               <div className="flex flex-col text-left p-2 mt-1">
@@ -134,11 +130,15 @@ const ProductDetails = () => {
                   <p className="p-1">{singlePost.formatodistribuzione}</p>
                   </div>
                 </div>
-                <div className="flex flex-col p-2">
-                  <button className="my-2 bg-white text-black rounded-md hover:border-none focus:outline-none active:outline-none active:border-none border-none">
+                <div className="p-2 flex flex-col justify-center items-center">
+                  <button className="my-2 bg-white text-black rounded-md hover:border-none
+                   focus:outline-none active:outline-none active:border-none border-none
+                   w-full sm:w-3/4 lg:w-3/6">
                     <PlayArrowIcon />Play
                   </button>
-                  <button className="bg-netflixGrayBorder text-white rounded-md border-none hover:border-none focus:outline-none active:outline-none active:border-none">
+                  <button className="bg-netflixGrayBorder text-white rounded-md border-none 
+                  hover:border-none focus:outline-none active:outline-none active:border-none
+                  w-full sm:w-3/4 lg:w-3/6">
                     <DownloadIcon />Scarica
                   </button>
                 </div>
@@ -166,7 +166,9 @@ const ProductDetails = () => {
                       )}
                     </button>
                   ) : (
-                    <button className="flex flex-col justify-center items-center bg-black">
+                    <button className="flex flex-col justify-center items-center
+                        hover:border-none focus:border-none active:border-none border-none focus:outline-none
+                         bg-black text-sm">
                     <LockIcon />
                     <p className="mt-1 font-semibold">Mia Lista</p>
                   </button>

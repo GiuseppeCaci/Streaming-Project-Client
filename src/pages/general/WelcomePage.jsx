@@ -12,10 +12,10 @@ const WelcomePage = () => {
       >
         <div className="text-white flex flex-col justify-center items-center">
           {/* Logo o titolo */}
-          <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-center">
+          <h1 className="text-4xl sm:text-6xl md:text-4xl lg:text-4xl font-bold mb-6 text-center">
             Benvenuto su <span className="text-red-500">Streaming Project</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center">
+          <p className="text-lg sm:text-xl md:text-lg text-gray-300 mb-8 text-center px-2">
             Il tuo portale per i migliori film, serie TV e tanto altro. Accedi o
             registrati per iniziare!
           </p>
@@ -45,10 +45,10 @@ const WelcomePage = () => {
           </Link>
         </div>
         <div>
-          <p className="px-5 text-lg">
+          <p className="px-5 text-lg md:px-10">
           Attenzione! Questo sito è un esempio dimostrativo che imita una piattaforma di streaming, ma non è una piattaforma reale!
           </p>
-          <p className="px-5 mt-5">
+          <p className="px-5 mt-2 md:px-10">
           Tutti i titoli presenti nel catalogo e le immagini sono stati generati utilizzando intelligenza artificiale, rispettivamente da ChatGPT e Leonardo AI.
           </p>
         </div>

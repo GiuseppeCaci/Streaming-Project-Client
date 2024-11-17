@@ -76,7 +76,7 @@ const SearchPage = () => {
               className="mx-1 text-white"
             ></ArrowBackIosNewIcon>
           </Link>
-          <div className=" flex justify-between items-center bg-netflixLightGray w-10/12 p-1 rounded-md ">
+          <div className=" flex justify-between items-center bg-netflixLightGray w-10/12 p-1 rounded-md md:w-11/12 lg:w-11/12">
             <SearchIcon className=" text-white pl-2" fontSize="large" />
             <input
               type="text"

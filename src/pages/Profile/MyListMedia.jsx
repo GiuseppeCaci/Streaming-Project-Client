@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { connectListFavorite } from "../../Redux/Features/FavoritesMedia/FavoriteSlice";
 
 const MyListMedia = () => {
-    const dispatch = useDispatch();
-  const { postBasicList, listLoading, listError } = useSelector((state) => state.listProducts);
+  const dispatch = useDispatch();
+  const { postBasicList, listLoading, listError } = useSelector(
+    (state) => state.listProducts
+  );
   const { accountConnect } = useSelector((state) => state.listFavoriteUser);
   const userLoginCheck = JSON.parse(localStorage.getItem("user"));
   const userListFavorites = JSON.parse(localStorage.getItem("favoritesList"));
@@ -18,7 +20,7 @@ const MyListMedia = () => {
       console.log("home, listFavorties: nessun accesso eseguito");
     }
   }, []);
-  
+
   const [filteredItems, setFilteredItems] = useState([]);
 
   // Funzione per filtrare gli elementi
@@ -47,7 +49,6 @@ const MyListMedia = () => {
       filterItems();
     }
   }, [postBasicList, accountConnect, userListFavorites]);
-  
 
   return (
     <>
@@ -56,25 +57,28 @@ const MyListMedia = () => {
           {listLoading && <p>Loading...</p>}
           {listError && <p>Error: {listError}</p>}
           {filteredItems.length > 0 ? (
-            <div className="mt-20 h-screen">
-                  <h2 className="text-left mb-1 pl-10 text-white text-lg font-semibold font-sans">La tua lista preferiti</h2>
-                  <div className="flex flex-wrap p-2 justify-center items-center">
-  {filteredItems.map((element) => (
-    <Link
-      key={element._id}
-      to={`/categories/${element.genere}/${element.titolo}`}
-      className="outline-none focus:outline-none active:outline-none hover:text-white 
+            <div className="pt-20 pb-20 min-h-screen">
+              <h2 className="text-left mb-1 pl-10 text-white text-lg font-semibold font-sans">
+                La tua lista preferiti
+              </h2>
+              <div className="flex flex-wrap p-2 justify-center items-center">
+                {filteredItems.map((element) => (
+                  <Link
+                    key={element._id}
+                    to={`/categories/${element.genere}/${element.titolo}`}
+                    className="outline-none focus:outline-none active:outline-none hover:text-white 
                  flex justify-center flex-col items-center
-                 basis-2/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
-    >
-      <img
-        src={element.locandina}
-        alt={element.titolo}
-        className="h-36 w-28 sm:h-40 sm:w-32 md:h-44 md:w-36 lg:h-48 lg:w-40 rounded-lg m-1" loading="lazy"
-      />
-    </Link>
-  ))}
-</div>
+                 basis-1/4 sm:basis-1/4 md:basis-1/5 lg:basis-1/6 m-1"
+                  >
+                    <img
+                      src={element.locandina}
+                      alt={element.titolo}
+                      className="rounded-lg"
+                      loading="lazy"
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
           ) : (
             <p>No favorite media found</p>

@@ -51,31 +51,32 @@ const PasswordReset = () => {
               Reimposta Password
             </h2>
             <form
-              className="flex flex-col p-5 space-y-4"
-              onSubmit={handleSubmit}
-            >
-              {messageForm && <p className="text-red-500">{messageForm}</p>}
-              <label className="flex flex-col">
-                <input
-                  required
-                  type="email"
-                  placeholder="Inserisci l'Email"
-                  name="email"
-                  value={emailForReset.password}
-                  onChange={(e) => setEmailForReset(e.target.value)}
-                  className="w-full p-3 bg-netflixLightGray border-none outline-none 
+  className="flex flex-col p-5 space-y-4 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto"
+  onSubmit={handleSubmit}
+>
+  {messageForm && <p className="text-red-500">{messageForm}</p>}
+  <label className="flex flex-col">
+    <input
+      required
+      type="email"
+      placeholder="Inserisci l'Email"
+      name="email"
+      value={emailForReset.password}
+      onChange={(e) => setEmailForReset(e.target.value)}
+      className="w-full p-3 bg-netflixLightGray border-none outline-none 
                  focus:outline-none active:outline-none hover:outline-none 
                  placeholder-gray-400 caret-white caret-w-2 text-sm font-light text-white rounded-md"
-                />
-              </label>
-              <button
-                type="submit"
-                className="mt-6 py-2 px-4 bg-netflixRed text-white font-semibold rounded-md hover:bg-white hover:text-black
-                hover:border-white transition"
-              >
-                invia
-              </button>
-            </form>
+    />
+  </label>
+  <button
+    type="submit"
+    className="mt-6 py-2 px-4 bg-netflixRed text-white font-semibold rounded-md hover:bg-white hover:text-black
+               hover:border-white transition w-full"
+  >
+    invia
+  </button>
+</form>
+
           </>
         )}
       </div>

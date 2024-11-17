@@ -29,7 +29,7 @@ const SearchResultMoreOne = ({ searchResultMedia }) => {
        <div className="flex flex-wrap p-2 justify-start items-center">
           {remainingResults.map((element) => (
          <Link key={element._id} to={`/categories/${element.genere}/${element.titolo}`} className="
-         basis-1/3 outline-none focus:outline-none 
+         basis-1/3 lg:basis-1/6 md:basis-1/4 outline-none focus:outline-none 
          active:outline-none hover:text-white flex justify-center flex-col items-center">
           <img src={`${element.locandina}`} alt={`${element.titolo}`} className="rounded-lg p-1" loading="lazy"/>
         </Link>

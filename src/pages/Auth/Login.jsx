@@ -154,55 +154,57 @@ useEffect(() => {
               ACCEDI
             </h2>
             <form
-              className="flex flex-col p-5 space-y-4"
-              onSubmit={handleSubmit}
-            >
-              {error && <p className="text-red-500">{error}</p>}
-              {messageForm && <p className="text-red-500">{messageForm}</p>}
-              <label className="flex flex-col">
-                <input
-                  required
-                  placeholder="username"
-                  name="username"
-                  value={loginForm.username}
-                  onChange={handleInputChange}
-                  className="w-full p-3 bg-netflixLightGray border-none outline-none 
-                  focus:outline-none active:outline-none hover:outline-none 
-                  placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
-                />
-              </label>
-              <label className="flex flex-col">
-              <div className="flex justify-between items-center w-full bg-netflixLightGray rounded-md">
-                <input
-                  required
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  name="password"
-                  value={loginForm.password}
-                  onChange={handleInputChange}
-                  className="w-full p-3 bg-netflixLightGray border-none outline-none 
-                  focus:outline-none active:outline-none hover:outline-none 
-                  placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
-                />
-                  <span onClick={togglePasswordVisibility} className="pr-4">
-                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}{" "}
-                  </span>
-                </div>
-              </label>
-              <button
-                type="submit"
-                className="mt-6 py-2 px-4 bg-netflixRed text-white font-semibold rounded-md hover:bg-white hover:text-black
-                hover:border-white transition"
-              >
-                {loading ? "Logging in..." : "Login"}
-              </button>
-              {notConfirmPassword ? (
-                <p>
-                  Clicca <button onClick={handlerEmailUser}> qui</button> per
-                  rimandare l'email di conferma
-                </p>
-              ) : null}
-            </form>
+  className="flex flex-col p-5 space-y-4 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto"
+  onSubmit={handleSubmit}
+>
+  {error && <p className="text-red-500">{error}</p>}
+  {messageForm && <p className="text-red-500">{messageForm}</p>}
+  <label className="flex flex-col">
+    <input
+      required
+      placeholder="username"
+      name="username"
+      value={loginForm.username}
+      onChange={handleInputChange}
+      className="w-full p-3 bg-netflixLightGray border-none outline-none 
+                 focus:outline-none active:outline-none hover:outline-none 
+                 placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
+    />
+  </label>
+  <label className="flex flex-col">
+    <div className="flex justify-between items-center w-full bg-netflixLightGray rounded-md">
+      <input
+        required
+        type={showPassword ? "text" : "password"}
+        placeholder="Password"
+        name="password"
+        value={loginForm.password}
+        onChange={handleInputChange}
+        className="w-full p-3 bg-netflixLightGray border-none outline-none 
+                   focus:outline-none active:outline-none hover:outline-none 
+                   placeholder-gray-400 caret-white caret-w-2 text-base font-light text-white rounded-md"
+      />
+      <span onClick={togglePasswordVisibility} className="pr-4">
+        {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}{" "}
+      </span>
+    </div>
+  </label>
+  <button
+    type="submit"
+    className="mt-6 py-2 px-4 bg-netflixRed text-white font-semibold rounded-md hover:bg-white hover:text-black
+               hover:border-white transition w-full"
+  >
+    {loading ? "Logging in..." : "Login"}
+  </button>
+  {notConfirmPassword && (
+    <p>
+      Clicca <button onClick={handlerEmailUser}> qui</button> per
+      rimandare l'email di conferma
+    </p>
+  )}
+</form>
+
+
           </>
         )}
       </div>
