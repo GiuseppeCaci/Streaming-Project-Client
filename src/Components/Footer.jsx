@@ -15,7 +15,7 @@ const Footer = () => {
       setPageOfMenu(false);
     } else if (/^\/categories\/[^/]+\/[^/]+$/.test(location.pathname)) {
       setPageOfMenu(true);
-    } else if (location.pathname === "/SearchPage") {
+    } else if (location.pathname === "/search") {
       setPageOfMenu(true);
     } else if (location.pathname === "/welcome-page") {
       setPageOfMenu(true);
@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="flex space-x-6">
             {userLoginCheck? (
               <>
-                <Link to="/MainProfile"><div className="flex flex-col items-center justify-center"><img src={`${userLoginCheck.imgprofile}`} className="w-9"></img>
+                <Link to="/profile"><div className="flex flex-col items-center justify-center"><img src={`${userLoginCheck.imgprofile}`} className="w-9"></img>
                 <p className="text-xs text-netflixWhite">My profile</p></div></Link>
               </>
             ) : (

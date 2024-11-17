@@ -23,13 +23,13 @@ const WelcomePage = () => {
           {/* Pulsanti di azione */}
           <div className="flex gap-4 mb-10">
             <Link
-              to="/Login"
+              to="/login"
               className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
             >
               Accedi
             </Link>
             <Link
-              to="/Register"
+              to="/register"
               className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
             >
               Registrati

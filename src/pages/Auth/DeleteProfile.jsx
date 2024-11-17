@@ -43,7 +43,7 @@ const DeleteProfile = () => {
 
   <div className="flex justify-center items-center gap-4">
     <Link
-      to="/MainProfile"
+      to="/profile"
       className="text-blue-500 hover:text-blue-400 font-sans font-semibold"
     >
       Torna indietro

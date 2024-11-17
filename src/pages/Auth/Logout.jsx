@@ -34,7 +34,7 @@ const Logout = () => {
             di voler disconnetere il profilo?</h2>
             
         <div className="flex justify-center items-center gap-4">
-            <Link to="/MainProfile"  className="text-blue-500 hover:text-blue-400 font-sans font-semibold">torna indietro</Link>
+            <Link to="/profile"  className="text-blue-500 hover:text-blue-400 font-sans font-semibold">torna indietro</Link>
             <button onClick={handlerLogout} className="bg-red-700 text-white w-44 py-2 rounded-lg font-sans font-semibold
              hover:bg-red-800 transition-colors duration-300">Esci</button>
              </div>

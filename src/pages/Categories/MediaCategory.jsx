@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
-import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import CategorySectionHome from "../general/CategorySectionHome";
 
 
 const MediaCategory = () => {

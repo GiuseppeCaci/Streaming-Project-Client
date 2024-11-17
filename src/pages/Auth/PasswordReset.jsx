@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import UseFetchGetAllUser from "../../UseHooks/UseFetchGetAllUser";
 import { fetchUserGetAll } from "../../Redux/Features/Api/UserApi";
@@ -43,7 +42,7 @@ const PasswordReset = () => {
       <div className="min-h-screen pt-44">
         {checkReset ? (
           <>
-            <h2 className="pl-3 text-white text-lg font-semibold font-sans">
+            <h2 className="text-white text-lg font-semibold font-sans px-7">
               ti abbiamo mandato un email per reimpostare la password!</h2>
           </>
         ) : (

@@ -7,7 +7,6 @@ import { login } from "../../Redux/Features/Api/UserApi";
 import { actionReset } from "../../Redux/Features/Users/AuthSlice";
 import Loading from "../../Components/Loading";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { favoritesListByUserId } from "../../Redux/Features/Api/ListFavoriteUserApi";
 
 const Login = () => {
@@ -124,7 +123,7 @@ useEffect(() => {
     );
     if(foundUserEmail){
       dispatch(fetchUserResendEmailPost({email:foundUserEmail.email}))
-      navigate("/UserEmailNotConfirm");
+      navigate("/user-email-not-confirm");
     } else {
       setMessageForm("errore di lettura dei dati")
     }
@@ -134,7 +133,12 @@ useEffect(() => {
     <>
       <div className="h-screen pt-36">
         {user ? (
-          <h2 className="pl-3 text-white text-lg font-semibold font-sans">bentornato {user.username}</h2>
+          <>
+          <div className="flex flex-col justify-center items-center">
+          <img className="w-32 mb-3 rounded-sm" src={`${user.imgprofile}`}></img>
+          <h2 className="pl-3 text-white text-xl font-semibold font-sans">Bentornato {user.username}!</h2>
+          </div>
+          </>
         ) : (
           <>
             <h2 className="pl-3 text-white text-lg font-semibold font-sans">

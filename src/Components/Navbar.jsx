@@ -100,12 +100,18 @@ const Navbar = () => {
       setPageOfMenu(false);
     } else if (/^\/categories\/[^/]+\/[^/]+$/.test(location.pathname)) {
       setPageOfMenu(true);
-    } else if (location.pathname === "/SearchPage") {
+    } else if (location.pathname === "/search") {
       setPageOfMenu(true);
     } else if (location.pathname === "/welcome-page") {
       setPageOfMenu(true);
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    // Chiudi il menu e ripristina lo scroll ogni volta che la rotta cambia
+    setCategoriesMenu(false);
+    document.body.style.overflow = "auto";
+  }, [location]);
 
 
 
@@ -130,7 +136,7 @@ const Navbar = () => {
               )}
               <div></div>
               <div className="flex space-x-6">
-                <Link to="/SearchPage" className="text-netflixWhite text-xs">
+                <Link to="/search" className="text-netflixWhite text-xs">
                   <SearchIcon fontSize="large"></SearchIcon>
                 </Link>
               </div>

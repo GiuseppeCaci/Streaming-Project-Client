@@ -15,10 +15,11 @@ import CheckIcon from "@mui/icons-material/Check";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
-import MoreLikeThis from "../../Components/MoreLikeThis";
+import MoreLikeThis from "../../Components/ProductsComponents/MoreLikeThis";
 import LockIcon from '@mui/icons-material/Lock';
 import UseResetVisibility from "../../UseHooks/UseResetVisibility";
 import { fetchSinglePost } from "../../Redux/Features/Api/ProductApi";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -100,6 +101,10 @@ const ProductDetails = () => {
                   <CloseIcon className="text-white" />
                 </Link>
               </button>
+              <button className="absolute top-20 right-40 m-5 w-10 h-10 rounded-full bg-gray-400 bg-opacity-0 flex items-center
+               justify-center hover:border-none focus:border-none active:border-none border-none focus:outline-none ">
+                  <PlayCircleOutlineIcon fontSize="large" className="text-white" />
+              </button>
               {listLoading ? 
   <div className="w-full h-56 sm:h-60 md:h-80 lg:h-96 bg-netflixSkeleton animate-pulse"></div>
   :
@@ -111,12 +116,16 @@ const ProductDetails = () => {
 }
 
               <div className="flex flex-col text-left p-2 mt-1">
-                <h2 className="text-lg pl-3">{singlePost.titolo}</h2>
-                <div className="flex pl-3">
-                  <p className="pr-2">{singlePost.annouscita}</p>
-                  <p className="px-2">{singlePost.etaminima}</p>
-                  <p className="px-2">{singlePost.durata}</p>
-                  <p className="px-2">{singlePost.formatodistribuzione}</p>
+                <h2 className="text-lg pl-3 font-semibold">{singlePost.titolo}</h2>
+                <div className="flex pl-3 font-light text-gray-300 items-center">
+                  <p className="pr-2 text-sm">{singlePost.annouscita}</p>
+                  <div className="px-1 bg-gray-600 flex justify-center items-center rounded-sm text-xs">
+                  <p>{singlePost.etaminima}</p>
+                  </div>
+                  <p className="px-2 text-sm">{singlePost.durata}</p>
+                  <div className="flex justify-center items-center rounded-sm text-xs border">
+                  <p className="p-1">{singlePost.formatodistribuzione}</p>
+                  </div>
                 </div>
                 <div className="flex flex-col p-2">
                   <button className="my-2 bg-white text-black rounded-md hover:border-none focus:outline-none active:outline-none active:border-none border-none">
@@ -126,40 +135,43 @@ const ProductDetails = () => {
                     <DownloadIcon />Scarica
                   </button>
                 </div>
-                <div className="text-sm pl-3">
-                  <p>{singlePost.descrizione}</p>
-                  <p className="pt-3">Cast: {singlePost.attori}</p>
+                <div className="text-sm pl-3 mt-2">
+                  <p className="text-white">{singlePost.descrizione}</p>
+                  <p className="pt-3 text-gray-300">Cast: {singlePost.attori}</p>
+                  <p className="text-gray-300">Director: {singlePost.regista}</p>
                 </div>
                 <div className="flex mt-7">
                   {userLoginCheck ? (
                     <button
-                      className={`flex flex-col justify-center items-center bg-black ${isAnimating ? "rotate-center" : ""}`}
+                      className={`flex flex-col justify-center items-center
+                        hover:border-none focus:border-none active:border-none border-none focus:outline-none
+                         bg-black text-sm ${isAnimating ? "rotate-center" : ""}`}
                       onClick={handleAddRemoveFavorite}
                     >
                       {isFavorite ? (
                         <>
-                          <CheckIcon className="text-green-500" />La mia lista
+                          <CheckIcon /> <p className="mt-1 font-semibold">Mia Lista</p>
                         </>
                       ) : (
                         <>
-                          <AddIcon />La mia lista
+                          <AddIcon /><p className="mt-1 font-semibold">Mia Lista</p>
                         </>
                       )}
                     </button>
                   ) : (
                     <button className="flex flex-col justify-center items-center bg-black">
                     <LockIcon />
-                    La mia lista
+                    <p className="mt-1 font-semibold">Mia Lista</p>
                   </button>
                   )}
-                  <button className="flex flex-col justify-center items-center bg-black">
-                    <ThumbUpIcon />Valuta
-                  </button>
-                  <button className="flex flex-col justify-center items-center bg-black">
-                    <SendIcon />Consiglia
-                  </button>
+                  <span className="flex flex-col justify-center items-center bg-trasparent w-28 opacity-40 text-sm">
+                    <ThumbUpIcon /> <p className="mt-1 font-semibold">Valuta</p>
+                  </span>
+                  <span className="flex flex-col justify-center items-center bg-trasparent w-28 opacity-40 text-sm">
+                    <SendIcon /><p className="mt-1 font-semibold">Consiglia</p>
+                  </span>
                 </div>
-                <span className="h-1 w-2/4 bg-netflixRed ml-3"></span>
+                <span className="h-1 w-1/4 bg-netflixRed ml-3 mt-3"></span>
               </div>
             </div>
           </>
@@ -169,7 +181,7 @@ const ProductDetails = () => {
       </div>
       <div className="text-left mt-7">
         <h2 className="pl-5 mb-2">Altri contenuti simili</h2>
-        <MoreLikeThis typeMedia={null} genre={null} favoriteMedia={null} />
+        <MoreLikeThis typeMedia={null} genre={`${singlePost.genere}`} favoriteMedia={null} />
       </div>
     </>
   );

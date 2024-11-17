@@ -1,6 +1,6 @@
 import React from "react";
-import Carousel from "../../Components/Carousel";
-import HeroMediaRandom from "../../Components/HeroMediaRandom";
+import Carousel from "../../Components/ProductsComponents/Carousel";
+import HeroMediaRandom from "../../Components/ProductsComponents/HeroMediaRandom";
 
 
 const GeneralSectionHome = () => {

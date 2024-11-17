@@ -37,25 +37,25 @@ const MainProfile = () => {
               <ul className="text-left">
                 <li className="py-3 flex items-center text-white">
                   <MovieIcon className="pr-1"></MovieIcon>{" "}
-                  <Link to="/mylistmedia" className="text-white">
+                  <Link to="/my-list-media" className="text-white">
                     La mia Lista
                   </Link>
                 </li>
                 <li className="py-3 flex items-center text-white">
                   <EditIcon className="pr-1"></EditIcon>
-                  <Link to="/AppSetting" className="text-white">
+                  <Link to="/setting-img-profile" className="text-white">
                     Modifica immagine di profilo
                   </Link>
                 </li>
                 <li className="py-3 flex items-center text-white">
                   <SettingsIcon className="pr-1"></SettingsIcon>
-                  <Link to="/PasswordReset" className="text-white">
+                  <Link to="/password-reset" className="text-white">
                     Cambia Password
                   </Link>
                 </li>
                 <li className="py-3 flex items-center text-white">
                   <DeleteIcon className="pr-1"></DeleteIcon>
-                  <Link to="/DeleteProfile" className="text-white">
+                  <Link to="/delete-profile" className="text-white">
                     Cancella profilo
                   </Link>
                 </li>

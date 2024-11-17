@@ -6,10 +6,10 @@ import UseFetchAllPost from "../../UseHooks/UseFetchAllPost";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import SearchMediaRaccomanded from "../../Components/SearchMediaRaccomanded";
-import SearchResultMoreOne from "../../Components/SearchResultMoreOne";
-import SearchResultOneFound from "../../Components/SearchResultOneFound";
-import SearchResultNoMediaFound from "../../Components/SearchResultNoMediaFound";
+import SearchMediaRaccomanded from "../../Components/SearchComponents/SearchMediaRaccomanded";
+import SearchResultMoreOne from "../../Components/SearchComponents/SearchResultMoreOne";
+import SearchResultOneFound from "../../Components/SearchComponents/SearchResultOneFound";
+import SearchResultNoMediaFound from "../../Components/SearchComponents/SearchResultNoMediaFound";
 
 const SearchPage = () => {
   const dispatch = useDispatch();

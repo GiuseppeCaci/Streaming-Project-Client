@@ -65,7 +65,7 @@ const Register = () => {
       setMessageForm(errorMessage);
     } else {
       setMessageForm("");
-      dispatch(fetchUserPost("http://localhost:3000/users/register", dataForm))
+      dispatch(fetchUserPost("https://streaming-project-backend-1e36bd062957.herokuapp.com/users/register", dataForm))
         .then(() => setCheckRegister(true))
         .catch((error) =>
           setMessageForm(error.message || "Errore durante la registrazione")
