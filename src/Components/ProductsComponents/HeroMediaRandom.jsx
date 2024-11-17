@@ -135,7 +135,7 @@ const HeroMediaRandom = ({ typeMedia }) => {
           <div className="absolute bottom-14 w-80 p-4 flex justify-between items-center text-white z-1 text-sm">
             <p className="px-1">{mediaRandom.genere}</p>
             <p className="px-1">•</p>
-            <p className="px-1">{mediaRandom.paese}</p>
+            <p className="px-1">{mediaRandom.titolo}</p>
             <p className="px-1">•</p>
             <p className="px-1">{mediaRandom.mediatype}</p>
           </div>
